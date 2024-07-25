@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    border-bottom: 1px solid black;
+}
+
+.steve{
+    width: 25vw;
+    padding: 20px;
+    border: none;
+    background-color: transparent;
+    font-size: 2.2vw;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-buttons{
+    padding: 15px;
+    padding-right: 25px;
+}
+
+nav{
+    display: flex;
+    align-self: left;
+    padding-left: 8vw;
+}
+
+button{
+    cursor: pointer;
+}
+
+nav button{
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 0px;
+}

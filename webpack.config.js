@@ -12,5 +12,13 @@ module.exports = {
         template: './src/index.html',
         title: 'Restaurant Bruh'
     }),
-]
+],
+module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
