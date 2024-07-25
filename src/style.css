@@ -42,3 +42,12 @@ nav button{
     padding: 10px 20px;
     border-radius: 0px;
 }
+
+.section.title{
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.section.content{
+    padding: 10px;
+}
