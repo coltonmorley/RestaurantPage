@@ -2,6 +2,8 @@ import './style.css'
 
 console.log("Ready bromine")
 
+//Add else error logs on all the if(body/content) s
+
 //SHIFT OPTION F
 /*
 picture usage
@@ -44,10 +46,12 @@ function loadHeader() {
 
         const nav = document.createElement("nav");
         const navItems = ["Locations", "Menu", "Catering", "Rewards"];
+        const navFuncs = [loadLocations, loadMenu, loadCatering, loadRewards]
 
         for (let i = 0; i < navItems.length; i++) {
             const but = document.createElement("button");
             but.textContent = navItems[i];
+            but.onclick = navFuncs[i]
             nav.append(but);
         }
 
@@ -66,7 +70,7 @@ function loadAbout() {
     if (body) {
         let content = document.getElementById("content");
         //Clear anything in current div
-        if (content != null) {
+        if (content) {
             content.innerHTML = "";
         } else {
             content = document.createElement("div");
@@ -104,15 +108,52 @@ function loadAbout() {
         about.append(text)
         container.append(about)
         content.append(container)
-        
-        //I have the html for image addition written in HTML HARCODE file
+        // Have the html for image addition written in HTML HARCODE file
 
-    }   
+    }
 }
 
+//Need to make into flex or grid cards, add pics of each city?? 1 column lots of rows spanning whole screen w good padding
+//Function to load locations
+function loadLocations() {
+    const content = document.getElementById("content");
+    if (content) {
+        //Clear anything in current div
+        content.innerHTML = "";
+        const locs = ["Las Vegas, NV - 123 Fremont Street", "Los Angeles, CA - 456 Sunset Boulevard", "Reno, NV - 707 Riverwalk District", "Portland, OR - 202 Pearl District", "Seattle, WA - 303 Pike Place", "Eugene, OR - 606 Downtown"]
+        const cont = document.createElement("div")
+        cont.className = "locations-container"
 
+        const title = document.createElement("div")
+        title.className = "section title"
+        cont.append(title)
+
+        for (let i = 0; i < 6; i++) {
+            const card = document.createElement("div")
+            card.className = "location-card"
+
+            const txt = document.createElement("div")
+            txt.textContent = locs[i]
+            card.append(txt)
+            cont.append(card)
+        }
+        content.append(cont)
+    }
+}
+
+function loadMenu() {
+    return
+}
+
+function loadCatering() {
+    return
+}
+
+function loadRewards() {
+    return
+}
 
 
 loadHeader()
 loadAbout()
-
+//loadLocations()
