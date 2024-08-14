@@ -142,18 +142,66 @@ function loadLocations() {
 }
 
 function loadMenu() {
-    return
+    const content = document.getElementById("content");
+    if (content) {
+        //Clear anything in current div
+        content.innerHTML = "";
+        //var second = document.querySelector(".content a:nth-child(2)")
+        const cont = document.createElement("div");
+        cont.className = "menu-container";
+        const classnames = ["section title", "starters", "salads", "burgers", "entrees", "deserts"];
+        for (let i = 0; i < 6; i++) {
+            const d = document.createElement("div")
+            d.className = classnames[i];
+            cont.append(d);
+        }
+        content.append(cont);
+        let sections = cont.querySelectorAll(":scope > div");
+        sections[0].textContent = "Menu, *Add autoscroll buttons";
+        
+        const blankMenuItem = document.createElement("div");
+        blankMenuItem.className = "menu-item"
+        const line = document.createElement("div");
+        blankMenuItem.append(line.cloneNode(true));
+        blankMenuItem.append(line.cloneNode(true))
+
+        const secTitle = document.createElement("div");
+        secTitle.textContent = "Starters"
+        sections[1].append(secTitle);
+        
+        let m1 = blankMenuItem.cloneNode(true);
+        m1.getElementsByTagName("div")[0].textContent = "Steve's Famous Nachos";
+        m1.getElementsByTagName("div")[1].textContent = "Crispy tortilla chips topped with melted cheese, jalapeños, black beans, pico de gallo, and sourcream.";
+        sections[1].append(m1);
+
+        m1 = blankMenuItem.cloneNode(true);
+        m1.getElementsByTagName("div")[0].textContent = "Buffalo Wings";
+        m1.getElementsByTagName("div")[1].textContent = "A dozen spicy buffalo wings served with celery sticks and blue cheese or ranch dressing.";
+        sections[1].append(m1);
+
+        m1 = blankMenuItem.cloneNode(true);
+        m1.getElementsByTagName("div")[0].textContent = "Spinach Artichoke Dip";
+        m1.getElementsByTagName("div")[1].textContent = "Creamy spinach and artichoke dip served with warm pita bread and tortilla chips.";
+        sections[1].append(m1);
+
+        m1 = blankMenuItem.cloneNode(true);
+        m1.getElementsByTagName("div")[0].textContent = "Loaded Potato Skins";
+        m1.getElementsByTagName("div")[1].textContent = "Potato skins loaded with cheddar cheese, bacon, green onions, and sour cream.";
+        sections[1].append(m1);
+
+        console.log(content);
+    }
 }
 
-function loadCatering() {
-    return
-}
+    function loadCatering() {
+        return
+    }
 
-function loadRewards() {
-    return
-}
+    function loadRewards() {
+        return
+    }
 
 
-loadHeader()
-loadAbout()
+    loadHeader()
+    loadAbout()
 //loadLocations()
